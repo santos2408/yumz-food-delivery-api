@@ -1,0 +1,39 @@
+{
+  "name": "yumz-food-delivery-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santos2408/food-delivery-app.git"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "crud",
+    "express",
+    "mysql",
+    "mysql2",
+    "sql",
+    "javascript"
+  ],
+  "author": "Roger Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/santos2408/food-delivery-app/issues"
+  },
+  "homepage": "https://github.com/santos2408/food-delivery-app#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1"
+  }
+}

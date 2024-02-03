@@ -9,6 +9,7 @@ lerna-debug.log*
 
 sql
 .env.development
+.env.production
 
 node_modules
 .DS_Store

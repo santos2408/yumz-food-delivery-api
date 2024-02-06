@@ -13,7 +13,7 @@ app.use(cors());
 // ==> index que gerencia todas as rotas
 // app.use(index);
 
-app.get("/", (request, response) => {
+app.use("/", (request, response) => {
   response.status(200).send({
     message: "Rota acessada com sucesso!",
   });

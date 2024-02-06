@@ -3,13 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
-
 const index = require("./routes/index");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.json({ type: "application/vnd.api+json" }));
+app.use(cors());
 
 // ==> index que gerencia todas as rotas
 app.use(index);

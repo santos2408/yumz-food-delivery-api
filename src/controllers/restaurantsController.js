@@ -2,8 +2,17 @@ const database = require("../config/database");
 
 exports.getRestaurants = async (request, response) => {
   try {
-    const [rows] = await database.query("SELECT * FROM restaurants");
-    response.status(200).send(rows);
+    const { page, limit, category } = request.query;
+    const offset = (page - 1) * limit;
+    let rows = null;
+
+    if (category) {
+      const [rows] = await database.query("SELECT * FROM restaurants WHERE category = ? LIMIT ? OFFSET ?", [category, +limit, +offset]);
+      response.status(200).send(rows);
+    } else {
+      const [rows] = await database.query("SELECT * FROM restaurants LIMIT ? OFFSET ?", [+limit, +offset]);
+      response.status(200).send(rows);
+    }
   } catch (error) {
     console.log(error);
   }

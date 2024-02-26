@@ -2,7 +2,7 @@ const database = require("../config/database");
 
 exports.getRestaurants = async (request, response) => {
   try {
-    const { page, limit, category } = request.query;
+    const { page = 1, limit = 10, category } = request.query;
     const offset = (page - 1) * limit;
     let rows = null;
 

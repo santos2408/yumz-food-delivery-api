@@ -19,12 +19,12 @@ exports.getRestaurants = async (request, response) => {
 };
 
 exports.postCreateRestaurant = async (request, response) => {
-  const { name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress } = request.body;
+  const { name, description, slug, logo, category, delivery_time_min, delivery_time_max, shipping, adress } = request.body;
 
   try {
     await database.query(
-      "INSERT INTO restaurants (id, name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-      [name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress],
+      "INSERT INTO restaurants (id, name, description, slug, logo, category, delivery_time_min, delivery_time_max, shipping, adress) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [name, description, slug, logo, category, delivery_time_min, delivery_time_max, shipping, adress],
     );
 
     response.status(202).send({
